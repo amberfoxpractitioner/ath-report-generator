@@ -952,9 +952,13 @@ Remember:
 
     let report;
     try {
-      const clean = rawText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+      let clean = rawText.trim();
+      clean = clean.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
+      const fb = clean.indexOf('{'); const lb = clean.lastIndexOf('}');
+      if (fb !== -1 && lb !== -1) clean = clean.substring(fb, lb + 1);
       report = JSON.parse(clean);
     } catch (e) {
+      console.error('Parse error:', e, rawText.substring(0, 300));
       throw new Error('Could not parse the generated report. Please try again.');
     }
 
