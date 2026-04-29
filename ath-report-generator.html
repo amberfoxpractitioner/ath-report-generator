@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v3.0 -->
+<!-- v3.2 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -125,15 +125,15 @@ body.edit-mode .editable:focus { background: #fffef0; box-shadow: 0 0 0 2px var(
 .fc-wow::before { content: '✦ '; font-style: normal; }
 
 /* ── WOW SECTION — dramatic dark treatment ── */
-.wow-section { background: #1e2418; border-radius: 16px; padding: 36px 40px; margin-bottom: 24px; position: relative; overflow: hidden; }
-.wow-section::before { content: '"'; position: absolute; top: -30px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 200px; color: var(--sage-light); opacity: 0.06; line-height: 1; pointer-events: none; }
-.wow-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 12px; font-weight: 500; }
-.wow-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #f7f9f4; margin-bottom: 18px; line-height: 1.35; font-style: italic; }
-.wow-intro { font-size: 17px; line-height: 1.9; color: rgba(247,249,244,0.75); margin-bottom: 22px; }
+.wow-section { background: var(--sage-bg); border: 1px solid var(--border); border-left: 5px solid var(--sage); border-radius: 16px; padding: 36px 40px; margin-bottom: 24px; position: relative; overflow: hidden; }
+.wow-section::before { content: '"'; position: absolute; top: -30px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 200px; color: var(--sage); opacity: 0.08; line-height: 1; pointer-events: none; }
+.wow-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; font-weight: 500; }
+.wow-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--text); margin-bottom: 18px; line-height: 1.35; font-style: italic; }
+.wow-intro { font-size: 17px; line-height: 1.9; color: var(--text-mid); margin-bottom: 22px; }
 .wow-matches { display: flex; flex-direction: column; gap: 10px; }
-.wow-match { display: flex; gap: 16px; align-items: flex-start; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 18px; border-left: 3px solid var(--sage-light); }
-.wm-scan { font-size: 13px; color: var(--sage-light); font-weight: 500; flex-shrink: 0; min-width: 140px; line-height: 1.5; }
-.wm-text { font-size: 16px; color: rgba(247,249,244,0.8); line-height: 1.65; }
+.wow-match { display: flex; flex-direction: column; gap: 8px; background: var(--white); border-radius: 10px; padding: 16px 18px; border: 1px solid var(--border); border-left: 3px solid var(--sage); }
+.wm-scan { font-size: 12px; color: var(--sage); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 1.5; display: block; }
+.wm-text { font-size: 16px; color: var(--text-mid); line-height: 1.75; display: block; }
 
 /* ── REPORT HEADER ── */
 .report-header { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; margin-bottom: 24px; position: relative; overflow: hidden; }
@@ -172,7 +172,7 @@ body.edit-mode .editable:focus { background: #fffef0; box-shadow: 0 0 0 2px var(
 .narrative { font-size: 17px; line-height: 1.9; color: var(--text-mid); margin-bottom: 20px; }
 
 /* ── FINDING CARDS ── */
-.findings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; margin-top: 16px; }
+.findings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 16px; }
 .fc { border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); position: relative; }
 .fc.stressed { border-left: 4px solid var(--red); background: var(--red-pale); }
 .fc.chronic { border-left: 4px solid #c8b560; background: var(--yellow-pale); }
@@ -225,7 +225,7 @@ body.edit-mode .editable:focus { background: #fffef0; box-shadow: 0 0 0 2px var(
 .sc-desc { font-size: 14px; line-height: 1.6; color: var(--text-mid); }
 
 /* ── CLOSING ── */
-.closing-box { background: #1e2418; border-radius: 16px; padding: 36px 40px; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 2; color: rgba(247,249,244,0.85); position: relative; overflow: hidden; }
+.closing-box { background: var(--sage-bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 2; color: var(--text-mid); position: relative; overflow: hidden; }
 .closing-box::before { content: '🌿'; position: absolute; bottom: 20px; right: 28px; font-size: 40px; opacity: 0.15; font-style: normal; }
 
 #panel-reports { flex-direction: column; padding: 36px 44px; overflow-y: auto; }
@@ -607,7 +607,7 @@ function renderWow(wow) {
     <div class="wow-label editable">What the Scan Is Reflecting</div>
     <div class="wow-title editable">Where Your Experience Meets the Energetic Field</div>
     <div class="wow-intro editable">${wow.intro||''}</div>
-    ${wow.matches?.length?`<div class="wow-matches">${wow.matches.map(m=>`<div class="wow-match"><div class="wm-scan editable">✦ ${m.scanFinding}</div><div class="wm-text editable">${m.narrative||m.intakeMatch}</div></div>`).join('')}</div>`:''}
+    ${wow.matches?.length?`<div class="wow-matches">${wow.matches.map(m=>`<div class="wow-match"><div class="wm-scan editable">✦ ${m.scanFinding}</div><div class="wm-text editable" style="margin-top:4px;">${m.narrative||m.intakeMatch}</div></div>`).join('')}</div>`:''}
   </div>`;
 }
 
