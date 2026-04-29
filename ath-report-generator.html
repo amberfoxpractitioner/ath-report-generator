@@ -809,6 +809,15 @@ Return a JSON object with this exact structure:
 
 let uploadedFiles = [];
 
+// Load saved API key on startup
+const savedKey = localStorage.getItem('ath_api_key');
+if (savedKey) document.getElementById('apiKey').value = savedKey;
+
+// Save API key whenever it changes
+document.getElementById('apiKey').addEventListener('input', () => {
+  localStorage.setItem('ath_api_key', document.getElementById('apiKey').value.trim());
+});
+
 document.getElementById('fileInput').addEventListener('change', function(e) {
   uploadedFiles = Array.from(e.target.files);
   updateFileList();
