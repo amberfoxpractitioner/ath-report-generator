@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v2.1-1777475500 -->
+<!-- v3.0 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -124,57 +124,109 @@ body.edit-mode .editable:focus { background: #fffef0; box-shadow: 0 0 0 2px var(
 .fc-wow { margin-top: 10px; padding: 9px 12px; background: var(--sage-bg); border-radius: 7px; font-size: 14px; color: var(--sage); line-height: 1.5; font-style: italic; }
 .fc-wow::before { content: '✦ '; font-style: normal; }
 
-.wow-section { background: var(--sage-bg); border: 1px solid var(--border); border-left: 4px solid var(--sage); border-radius: 14px; padding: 28px 32px; margin-bottom: 20px; }
-.wow-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; font-weight: 500; }
-.wow-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--text); margin-bottom: 16px; line-height: 1.4; }
-.wow-intro { font-size: 17px; line-height: 1.85; color: var(--text-mid); margin-bottom: 18px; }
+/* ── WOW SECTION — dramatic dark treatment ── */
+.wow-section { background: #1e2418; border-radius: 16px; padding: 36px 40px; margin-bottom: 24px; position: relative; overflow: hidden; }
+.wow-section::before { content: '"'; position: absolute; top: -30px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 200px; color: var(--sage-light); opacity: 0.06; line-height: 1; pointer-events: none; }
+.wow-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 12px; font-weight: 500; }
+.wow-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #f7f9f4; margin-bottom: 18px; line-height: 1.35; font-style: italic; }
+.wow-intro { font-size: 17px; line-height: 1.9; color: rgba(247,249,244,0.75); margin-bottom: 22px; }
 .wow-matches { display: flex; flex-direction: column; gap: 10px; }
-.wow-match { display: flex; gap: 14px; align-items: flex-start; background: var(--white); border-radius: 9px; padding: 14px 16px; border: 1px solid var(--border); }
-.wm-scan { font-size: 14px; color: var(--sage); font-weight: 500; flex-shrink: 0; min-width: 130px; }
-.wm-text { font-size: 16px; color: var(--text-mid); line-height: 1.6; }
+.wow-match { display: flex; gap: 16px; align-items: flex-start; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 18px; border-left: 3px solid var(--sage-light); }
+.wm-scan { font-size: 13px; color: var(--sage-light); font-weight: 500; flex-shrink: 0; min-width: 140px; line-height: 1.5; }
+.wm-text { font-size: 16px; color: rgba(247,249,244,0.8); line-height: 1.65; }
 
-.report-header { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 32px 36px; margin-bottom: 20px; border-top: 4px solid var(--sage); }
-.rh-clinic { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
-.rh-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--text); margin-bottom: 4px; }
-.rh-sub { font-size: 15px; color: var(--text-light); }
-.rh-meta { display: flex; gap: 28px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); flex-wrap: wrap; }
-.rh-meta-item label { display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 3px; }
-.rh-meta-item span { font-size: 17px; color: var(--text); font-family: 'Cormorant Garamond', serif; }
+/* ── REPORT HEADER ── */
+.report-header { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; margin-bottom: 24px; position: relative; overflow: hidden; }
+.report-header::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--sage) 0%, var(--sage-light) 50%, var(--sage) 100%); }
+.rh-clinic { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; }
+.rh-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: var(--text); margin-bottom: 4px; font-weight: 300; line-height: 1.2; }
+.rh-sub { font-size: 14px; color: var(--text-light); letter-spacing: 0.5px; }
+.rh-meta { display: flex; gap: 32px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.rh-meta-item label { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+.rh-meta-item span { font-size: 18px; color: var(--text); font-family: 'Cormorant Garamond', serif; }
 
-.disclaimer { background: var(--sage-pale); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 14px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px; border-left: 3px solid var(--sage-light); }
-.intake-summary { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; margin-bottom: 20px; }
-.intake-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
-.chip { padding: 5px 13px; border-radius: 20px; font-size: 14px; background: var(--sage-bg); color: var(--sage); border: 1px solid var(--border); }
+/* ── DISCLAIMER ── */
+.disclaimer { background: var(--sage-pale); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; font-size: 13px; color: var(--text-light); line-height: 1.7; margin-bottom: 24px; border-left: 3px solid var(--sage-light); font-style: italic; }
 
-.rec-box { background: var(--sage-bg); border-radius: 10px; padding: 18px 22px; margin-top: 18px; border: 1px solid var(--border); }
-.rec-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; font-weight: 500; }
-.rec-item { display: flex; gap: 8px; font-size: 16px; color: var(--text-mid); margin-bottom: 8px; line-height: 1.5; }
+/* ── INTAKE SUMMARY ── */
+.intake-summary { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; }
+.intake-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { padding: 6px 15px; border-radius: 20px; font-size: 13px; background: var(--sage-bg); color: var(--sage); border: 1px solid var(--border); }
+
+/* ── SECTION CARDS ── */
+.report-card { background: var(--white); border-radius: 16px; border: 1px solid var(--border); margin-bottom: 20px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
+.rch { padding: 20px 28px; display: flex; align-items: center; gap: 14px; cursor: pointer; user-select: none; transition: background 0.15s; }
+.rch:hover { background: var(--sage-pale); }
+.rch.open { border-bottom: 1px solid var(--border); }
+.rch-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
+.rch-title { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 600; flex: 1; letter-spacing: 0.3px; }
+.rch-badge { font-size: 11px; padding: 4px 11px; border-radius: 20px; font-weight: 500; letter-spacing: 0.3px; }
+.badge-red { background: var(--red-pale); color: var(--red); }
+.badge-yellow { background: var(--yellow-pale); color: var(--yellow); }
+.rch-chev { color: var(--text-light); transition: transform 0.25s; font-size: 14px; }
+.rch-chev.open { transform: rotate(180deg); }
+.rcb { padding: 28px; display: none; }
+.rcb.open { display: block; }
+
+/* ── NARRATIVE TEXT ── */
+.narrative { font-size: 17px; line-height: 1.9; color: var(--text-mid); margin-bottom: 20px; }
+
+/* ── FINDING CARDS ── */
+.findings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; margin-top: 16px; }
+.fc { border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); position: relative; }
+.fc.stressed { border-left: 4px solid var(--red); background: var(--red-pale); }
+.fc.chronic { border-left: 4px solid #c8b560; background: var(--yellow-pale); }
+.fc-dot-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.fc-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.fc.stressed .fc-dot { background: var(--red); }
+.fc.chronic .fc-dot { background: #c8b560; }
+.fc-status { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.fc.stressed .fc-status { color: var(--red); }
+.fc.chronic .fc-status { color: var(--yellow); }
+.fc-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+.fc-desc { font-size: 15px; line-height: 1.7; color: var(--text-mid); }
+.fc-wow { margin-top: 12px; padding: 10px 14px; background: rgba(138,162,96,0.12); border-radius: 8px; font-size: 13px; color: var(--sage); line-height: 1.6; font-style: italic; border-left: 2px solid var(--sage-light); }
+.fc-wow::before { content: '✦  '; font-style: normal; }
+
+/* ── RECOMMENDATIONS ── */
+.rec-box { background: var(--sage-bg); border-radius: 12px; padding: 20px 24px; margin-top: 20px; border: 1px solid var(--border); }
+.rec-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; font-weight: 500; }
+.rec-item { display: flex; gap: 10px; font-size: 16px; color: var(--text-mid); margin-bottom: 10px; line-height: 1.55; }
 .rec-item::before { content: '→'; color: var(--sage); flex-shrink: 0; }
 
-.foods-avoid { background: var(--red-pale); border-radius: 10px; padding: 16px 20px; margin-top: 16px; border: 1px solid #f0d0cc; }
-.foods-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; font-weight: 500; }
-.food-chips { display: flex; flex-wrap: wrap; gap: 7px; }
-.food-chip { padding: 5px 13px; border-radius: 20px; font-size: 14px; background: white; color: var(--red); border: 1px solid #f0d0cc; }
+/* ── FOODS TO AVOID ── */
+.foods-avoid { background: var(--red-pale); border-radius: 12px; padding: 18px 22px; margin-top: 18px; border: 1px solid #f0d0cc; }
+.foods-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; font-weight: 500; }
+.food-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.food-chip { padding: 6px 15px; border-radius: 20px; font-size: 14px; background: white; color: var(--red); border: 1px solid #f0d0cc; }
 
-.emotion-box { background: var(--sage-pale); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin-top: 16px; }
-.emotion-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; font-weight: 500; }
-.emotion-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--text); margin-bottom: 12px; }
-.emotion-text { font-size: 17px; line-height: 1.85; color: var(--text-mid); }
+/* ── EMOTIONS ── */
+.emotion-box { background: linear-gradient(135deg, #f0f4eb, #f7f9f4); border: 1px solid var(--border); border-radius: 14px; padding: 26px 30px; margin-top: 18px; position: relative; overflow: hidden; }
+.emotion-box::before { content: '✦'; position: absolute; right: 24px; top: 18px; font-size: 48px; color: var(--sage-light); opacity: 0.25; }
+.emotion-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; font-weight: 500; }
+.emotion-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text); margin-bottom: 14px; font-style: italic; }
+.emotion-text { font-size: 17px; line-height: 1.9; color: var(--text-mid); }
 
-.score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
-.score-col-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; }
+/* ── BASELINE SCORES ── */
+.score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+.score-col-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.score-col-label::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
 .score-col-label.stressed { color: var(--red); }
+.score-col-label.stressed::before { background: var(--red); }
 .score-col-label.weakened { color: var(--yellow); }
-.sc { border-radius: 9px; padding: 14px 16px; border: 1px solid var(--border); margin-bottom: 8px; }
-.sc.stressed { background: var(--red-pale); border-left: 3px solid var(--red); }
-.sc.weakened { background: var(--yellow-pale); border-left: 3px solid #c8b560; }
-.sc-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.sc-status { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+.score-col-label.weakened::before { background: #c8b560; }
+.sc { border-radius: 10px; padding: 16px 18px; border: 1px solid var(--border); margin-bottom: 10px; }
+.sc.stressed { background: var(--red-pale); border-left: 4px solid var(--red); }
+.sc.weakened { background: var(--yellow-pale); border-left: 4px solid #c8b560; }
+.sc-name { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+.sc-status { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
 .sc.stressed .sc-status { color: var(--red); }
 .sc.weakened .sc-status { color: var(--yellow); }
-.sc-desc { font-size: 14px; line-height: 1.55; color: var(--text-mid); }
+.sc-desc { font-size: 14px; line-height: 1.6; color: var(--text-mid); }
 
-.closing-box { background: var(--sage-bg); border-radius: 14px; padding: 28px 32px; border: 1px solid var(--border); font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; line-height: 1.9; color: var(--text-mid); }
+/* ── CLOSING ── */
+.closing-box { background: #1e2418; border-radius: 16px; padding: 36px 40px; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 2; color: rgba(247,249,244,0.85); position: relative; overflow: hidden; }
+.closing-box::before { content: '🌿'; position: absolute; bottom: 20px; right: 28px; font-size: 40px; opacity: 0.15; font-style: normal; }
 
 #panel-reports { flex-direction: column; padding: 36px 44px; overflow-y: auto; }
 .reports-header { margin-bottom: 28px; }
@@ -311,7 +363,7 @@ body.edit-mode .editable:focus { background: #fffef0; box-shadow: 0 0 0 2px var(
 </div>
 
 <script>
-const SYSTEM_PROMPT = `You are an expert report writer for All Things Homeopathy, a bio resonance scanning practice run by Amber Fox. You analyze Qest4 energetic scan results and client intake forms to generate comprehensive, beautifully written client reports.
+const SYSTEM_PROMPT = `You are an expert report writer for All Things Homeopathy, a bio resonance scanning practice run by Amber Fox. You analyze bio resonance scan results and client intake forms to generate comprehensive, beautifully written client reports.
 
 CRITICAL RULES:
 1. NEVER use diagnostic language. Never say "you have", "your X is too high/low", "you are deficient in".
@@ -525,7 +577,7 @@ function renderReport(r) {
     <div class="report-header">
       <div class="rh-clinic">All Things Homeopathy · Energetic Assessment</div>
       <div class="rh-title">Bio Resonance Report</div>
-      <div class="rh-sub">Qest4 Energetic Evaluation · Confidential Client Copy</div>
+      <div class="rh-sub">Energetic Evaluation · Confidential Client Copy</div>
       <div class="rh-meta">
         <div class="rh-meta-item"><label>Client</label><span contenteditable="true" id="clientNameField" style="cursor:text;min-width:80px;display:inline-block;border-bottom:1px dashed var(--border);">${r.clientName || ''}</span></div>
         <div class="rh-meta-item"><label>Scan Date</label><span class="editable">${r.scanDate||''}</span></div>
@@ -534,7 +586,7 @@ function renderReport(r) {
       </div>
     </div>
 
-    <div class="disclaimer editable">${r.disclaimer||'This report reflects energetic signatures identified through Qest4 bio resonance scanning. It is for educational purposes only and does not constitute a medical diagnosis or treatment recommendation. No claim of diagnosis can be made.'}</div>
+    <div class="disclaimer editable">${r.disclaimer||'This report reflects energetic signatures identified through bio resonance scanning. It is for educational purposes only and does not constitute a medical diagnosis or treatment recommendation. No claim of diagnosis can be made.'}</div>
 
     ${r.chiefComplaint?`<div class="intake-summary"><label class="field-label">What Brought You In</label><div style="font-size:17px;line-height:1.8;color:var(--text-mid);font-style:italic;margin-bottom:12px;" class="editable">"${r.chiefComplaint}"</div>${r.intakeSymptoms?.length?`<label class="field-label" style="margin-top:8px;">Key Symptoms</label><div class="intake-chips">${r.intakeSymptoms.map(s=>`<div class="chip editable">${s}</div>`).join('')}</div>`:''}</div>`:''}
 
@@ -589,7 +641,7 @@ function renderComp(comp) {
     </div>
     <div class="rcb open">
       <div class="narrative editable">${comp.narrative||''}</div>
-      ${comp.findings?.length?`<div class="findings-grid">${comp.findings.map(f=>`<div class="fc ${f.status==='stressed'?'stressed':'chronic'}"><div class="fc-status">${f.status==='stressed'?'🔴 Stressed Signature':'🟡 Chronic Signature'}</div><div class="fc-name editable">${f.name}</div><div class="fc-desc editable">${f.energeticMeaning||''}</div>${f.intakeConnection?`<div class="fc-wow editable">${f.intakeConnection}</div>`:''}</div>`).join('')}</div>`:''}
+      ${comp.findings?.length?`<div class="findings-grid">${comp.findings.map(f=>`<div class="fc ${f.status==='stressed'?'stressed':'chronic'}"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">${f.status==='stressed'?'Stressed Signature':'Chronic Signature'}</div></div><div class="fc-name editable">${f.name}</div><div class="fc-desc editable">${f.energeticMeaning||''}</div>${f.intakeConnection?`<div class="fc-wow editable">${f.intakeConnection}</div>`:''}</div>`).join('')}</div>`:''}
       ${comp.foodsToAvoid?.length?`<div class="foods-avoid"><div class="foods-label">Foods to Avoid While These Signatures Are Present</div><div class="food-chips">${comp.foodsToAvoid.map(f=>`<div class="food-chip editable">⊘ ${f}</div>`).join('')}</div></div>`:''}
       ${comp.recommendations?.length?`<div class="rec-box"><div class="rec-label">Recommendations</div>${comp.recommendations.map(r=>`<div class="rec-item editable">${r}</div>`).join('')}</div>`:''}
     </div>
@@ -605,11 +657,11 @@ function renderInfo(info) {
     </div>
     <div class="rcb open">
       <div class="narrative editable">${info.narrative||''}</div>
-      ${info.aminoAcids?.length?`<div style="margin-top:16px;"><label class="field-label">Amino Acid Signatures</label><div class="findings-grid">${info.aminoAcids.map(a=>`<div class="fc chronic"><div class="fc-status">🟡 Amino Acid Signature</div><div class="fc-name editable">${a.name}</div><div class="fc-desc editable">${a.neurologicalNote||''}</div></div>`).join('')}</div></div>`:''}
-      ${info.enzymes?.length?`<div style="margin-top:16px;"><label class="field-label">Enzyme Signatures — Food Correlations</label><div class="findings-grid">${info.enzymes.map(e=>`<div class="fc chronic"><div class="fc-status">🟡 Enzyme Signature</div><div class="fc-name editable">${e.name}</div><div class="fc-desc editable">${e.foodNote||''}</div></div>`).join('')}</div></div>`:''}
-      ${info.hormones?.length?`<div style="margin-top:16px;"><label class="field-label">Hormone Signatures</label><div class="findings-grid">${info.hormones.map(h=>`<div class="fc chronic"><div class="fc-status">🟡 Hormone Signature</div><div class="fc-name editable">${h.name}</div><div class="fc-desc editable">${h.note||''}</div></div>`).join('')}</div>${info.hormoneIntakeCorrelation?`<div class="fc-wow" style="margin-top:10px;padding:12px 16px;border-radius:9px;" class="editable">${info.hormoneIntakeCorrelation}</div>`:''}${info.hormoneRecommendation?`<div class="rec-box" style="margin-top:12px;"><div class="rec-label">Hormonal Support Recommendations</div><div class="rec-item editable">Magnesium Glycinate 200mg twice daily</div><div class="rec-item editable">Vitamin D3 with K2 10,000 IU once daily</div><div class="rec-item editable">Methylated B Complex daily</div></div>`:''}</div>`:''}
-      ${info.minerals?.length?`<div style="margin-top:16px;"><label class="field-label">Mineral Signatures</label><div class="findings-grid">${info.minerals.map(m=>`<div class="fc chronic"><div class="fc-status">🟡 Mineral Signature</div><div class="fc-name editable">${m.name}</div><div class="fc-desc editable">${m.note||''}</div>${m.mthfrFlag?`<div class="fc-wow editable">This mineral signature can energetically reflect stress on the MTHFR methylation pathway. This is not a diagnosis but it may be worth exploring methylation support with a qualified practitioner.</div>`:''}</div>`).join('')}</div></div>`:''}
-      ${info.vitamins?.length?`<div style="margin-top:16px;"><label class="field-label">Vitamin Signatures</label><div class="findings-grid">${info.vitamins.map(v=>`<div class="fc chronic"><div class="fc-status">🟡 Vitamin Signature</div><div class="fc-name editable">${v.name}</div><div class="fc-desc editable">${v.note||''}</div></div>`).join('')}</div></div>`:''}
+      ${info.aminoAcids?.length?`<div style="margin-top:16px;"><label class="field-label">Amino Acid Signatures</label><div class="findings-grid">${info.aminoAcids.map(a=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Amino Acid Signature</div></div><div class="fc-name editable">${a.name}</div><div class="fc-desc editable">${a.neurologicalNote||''}</div></div>`).join('')}</div></div>`:''}
+      ${info.enzymes?.length?`<div style="margin-top:16px;"><label class="field-label">Enzyme Signatures — Food Correlations</label><div class="findings-grid">${info.enzymes.map(e=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Enzyme Signature</div></div><div class="fc-name editable">${e.name}</div><div class="fc-desc editable">${e.foodNote||''}</div></div>`).join('')}</div></div>`:''}
+      ${info.hormones?.length?`<div style="margin-top:16px;"><label class="field-label">Hormone Signatures</label><div class="findings-grid">${info.hormones.map(h=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Hormone Signature</div></div><div class="fc-name editable">${h.name}</div><div class="fc-desc editable">${h.note||''}</div></div>`).join('')}</div>${info.hormoneIntakeCorrelation?`<div class="fc-wow" style="margin-top:10px;padding:12px 16px;border-radius:9px;" class="editable">${info.hormoneIntakeCorrelation}</div>`:''}${info.hormoneRecommendation?`<div class="rec-box" style="margin-top:12px;"><div class="rec-label">Hormonal Support Recommendations</div><div class="rec-item editable">Magnesium Glycinate 200mg twice daily</div><div class="rec-item editable">Vitamin D3 with K2 10,000 IU once daily</div><div class="rec-item editable">Methylated B Complex daily</div></div>`:''}</div>`:''}
+      ${info.minerals?.length?`<div style="margin-top:16px;"><label class="field-label">Mineral Signatures</label><div class="findings-grid">${info.minerals.map(m=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Mineral Signature</div></div><div class="fc-name editable">${m.name}</div><div class="fc-desc editable">${m.note||''}</div>${m.mthfrFlag?`<div class="fc-wow editable">This mineral signature can energetically reflect stress on the MTHFR methylation pathway. This is not a diagnosis but it may be worth exploring methylation support with a qualified practitioner.</div>`:''}</div>`).join('')}</div></div>`:''}
+      ${info.vitamins?.length?`<div style="margin-top:16px;"><label class="field-label">Vitamin Signatures</label><div class="findings-grid">${info.vitamins.map(v=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Vitamin Signature</div></div><div class="fc-name editable">${v.name}</div><div class="fc-desc editable">${v.note||''}</div></div>`).join('')}</div></div>`:''}
     </div>
   </div>`;
 }
@@ -639,7 +691,7 @@ function renderDental(findings) {
     </div>
     <div class="rcb">
       <div class="narrative editable">The dental scan reveals energetic signatures connected to specific teeth and their associated organ pathways. Each tooth is energetically linked to organs, glands, and tissues throughout the body. These findings reflect energetic imbalances in those pathways, not a dental diagnosis.</div>
-      <div class="findings-grid">${findings.map(f=>`<div class="fc chronic"><div class="fc-status">🟡 Dental Signature</div><div class="fc-name editable">${f.tooth}</div><div class="fc-desc editable">${f.finding}</div>${f.organConnection?`<div class="fc-wow editable">Energetically connected to: ${f.organConnection}</div>`:''}</div>`).join('')}</div>
+      <div class="findings-grid">${findings.map(f=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Dental Signature</div></div><div class="fc-name editable">${f.tooth}</div><div class="fc-desc editable">${f.finding}</div>${f.organConnection?`<div class="fc-wow editable">Energetically connected to: ${f.organConnection}</div>`:''}</div>`).join('')}</div>
     </div>
   </div>`;
 }
@@ -653,7 +705,7 @@ function renderVertebral(findings) {
     </div>
     <div class="rcb">
       <div class="narrative editable">The vertebral scan identifies energetic signatures along the spine and their connections to organs, glands, and body systems. These spinal energetics can reflect patterns that show up throughout the system.</div>
-      <div class="findings-grid">${findings.map(f=>`<div class="fc chronic"><div class="fc-status">🟡 Vertebral Signature</div><div class="fc-name editable">${f.vertebra}</div><div class="fc-desc editable">Areas: ${f.areas}</div><div class="fc-desc editable" style="margin-top:5px;">Energetic Effects: ${f.effects}</div></div>`).join('')}</div>
+      <div class="findings-grid">${findings.map(f=>`<div class="fc chronic"><div class="fc-dot-row"><div class="fc-dot"></div><div class="fc-status">Vertebral Signature</div></div><div class="fc-name editable">${f.vertebra}</div><div class="fc-desc editable">Areas: ${f.areas}</div><div class="fc-desc editable" style="margin-top:5px;">Energetic Effects: ${f.effects}</div></div>`).join('')}</div>
     </div>
   </div>`;
 }
